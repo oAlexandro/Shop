@@ -254,7 +254,7 @@ def register():
                             'email' : form_register.Email.data})
             conn.commit()
             flash(f'Account created for {form_register.Username.data}!', 'success')
-            return redirect(url_for('base'))
+            return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form_register)
 
 
