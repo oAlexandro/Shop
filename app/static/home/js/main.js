@@ -31,7 +31,7 @@ function item2(id) {
    // localStorage.setItem('item', JSON.stringify(id));
   // saveCart();
     console.log("TEST INPUT")
-    window.open("http://127.0.0.1:5000/cart", "_self");
+    window.open("https://shop-4641.herokuapp.com/cart", "_self");
     location.href = meni_1;
     $('.cart').html(out);
     

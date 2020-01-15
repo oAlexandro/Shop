@@ -123,7 +123,7 @@ if (isEmpty(cart)) {
  function onResponse(data){
                     console.log("Sesion")
                     sessionStorage.clear();
-                    window.open("http://127.0.0.1:5000/order", "_self");
+                    window.open("https://shop-4641.herokuapp.com/order", "_self");
                 }
 
 $(document).ready(function () {
