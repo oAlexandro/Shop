@@ -112,7 +112,7 @@ def cart():
                 cursor.execute(
                     "INSERT INTO ord (id_customer, id_order, id_product, name_of_product, product_description, image, price, date_order) "
                    "VALUES ((SELECT(id_customer) From customer WHERE %(id_user)s=id_customer),"
-                   " (SELECT MAX(id_order)+1 From ord), (SELECT (id_product) From product WHERE (%(id_new_order)s)+1=id_product), (SELECT(name_of_product) From product WHERE (%(id_new_order)s)+1=id_product),(SELECT(product_description) From product WHERE (%(id_new_order)s)+1=id_product),(SELECT(image) From product WHERE (%(id_new_order)s)+1=id_product),"
+                   " (SELECT MAX(1), (SELECT (id_product) From product WHERE (%(id_new_order)s)+1=id_product), (SELECT(name_of_product) From product WHERE (%(id_new_order)s)+1=id_product),(SELECT(product_description) From product WHERE (%(id_new_order)s)+1=id_product),(SELECT(image) From product WHERE (%(id_new_order)s)+1=id_product),"
                     "(Select price*%(count)s From product Where price=(Select price FROM product where (%(id_new_order)s)+1=id_product)), %(date_now)s)",
                    {'id_new_order': empList[index]['id'],
                     'count': empList[index]['count'],
@@ -217,7 +217,7 @@ def adminPage():
                 select=form_insert.select.data
                 print(name,product,image,price,quantity,select)
                 cursor.execute("INSERT INTO product (id_product,id_category, name_of_product, product_description,image,price,quantity_in_stock) "
-                               "VALUES ((1),"
+                               "VALUES ((SELECT MAX(id_product)+1 From product),"
                                "(SELECT (id_category) From category WHERE %(select)s=name_category), %(name_of_product)s,  %(product_description)s, %(image)s, %(price)s, %(quantity_in_stock)s)",
                                {'name_of_product': name,
                                 'select': select,
