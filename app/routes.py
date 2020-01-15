@@ -217,7 +217,7 @@ def adminPage():
                 select=form_insert.select.data
                 print(name,product,image,price,quantity,select)
                 cursor.execute("INSERT INTO product (id_product,id_category, name_of_product, product_description,image,price,quantity_in_stock) "
-                               "VALUES ((SELECT MAX(id_product)+1 From product),"
+                               "VALUES ((1),"
                                "(SELECT (id_category) From category WHERE %(select)s=name_category), %(name_of_product)s,  %(product_description)s, %(image)s, %(price)s, %(quantity_in_stock)s)",
                                {'name_of_product': name,
                                 'select': select,
@@ -247,7 +247,7 @@ def register():
             if form_register.Username != login:
                 print("Создавай")
             cursor.execute("INSERT INTO customer (id_customer,login, password, email) "
-                           "VALUES ((1), %(username)s,  %(password)s, %(email)s)",
+                           "VALUES ((SELECT MAX(id_customer)+1 From customer), %(username)s,  %(password)s, %(email)s)",
                            {'username' : form_register.Username.data,
                             'password': str(form_register.password.data),
                             'email' : form_register.Email.data})
