@@ -13,7 +13,15 @@
     </div>
     </div>
     <div class="send-id-price">
+        {% if current_user.is_authenticated %}
         <p><button class="send-all">Заказать </button></p>
+        {% else %}
+        <a class="nav-item nav-link login-link" href="{{ url_for('login') }}">Авторизуйтесь чтоб оформить заказ</a>
+        {% endif %}
+
+
+
+
     </div>
 </main>
 
