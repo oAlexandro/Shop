@@ -1,0 +1,30 @@
+{
+  "1234": {
+    "name": "Яблоки",
+    "cost": 44.2,
+    "description": "Сочные спелы",
+    "order": 3,
+    "img" : "file:///C:/Users/Alexandro/microblog/app/static/home/images/cherry.png"
+  },
+  "1235": {
+    "name": "Вишня",
+    "cost": 54.6,
+    "description": "Кислая красная",
+    "order": 5,
+    "img" : "file:///C:/Users/Alexandro/microblog/app/static/home/images/cherry.png"
+  },
+  "1236": {
+    "name": "Виноград",
+    "cost": 94.2,
+    "description": "file:///C:/Users/Alexandro/microblog/app/static/home/images/cherry.png",
+    "order": 1,
+    "img" : "file:///C:/Users/Alexandro/microblog/app/static/home/images/cherry.png"
+  },
+  "1237": {
+    "name": "Арбуз",
+    "cost": 23,
+    "description": "Сладкий красный",
+    "order": 8,
+    "img" : "file:///C:/Users/Alexandro/microblog/app/static/home/images/cherry.png"
+  }
+}

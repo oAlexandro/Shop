@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+        <div class="form-holder">
+            <span class="lnr lnr-lock"></span>
+            <input type="text" class="form-control" name="name_product" placeholder="Name">
+            {% for error in form.name_product.errors %}
+            				<span style="color: red;">[{{ error }}]</span>
+            			{% endfor %}
+        </div>
+
+         <div class="form-holder">
+            <span class="lnr lnr-lock"></span>
+            <input type="text" class="form-control" name="product_description" placeholder="Name description">
+             {% for error in form.product_description.errors %}
+            				<span style="color: red;">[{{ error }}]</span>
+            			{% endfor %}
+        </div>
+
+        <div class="form-holder">
+            <span class="lnr lnr-lock"></span>
+            <input type="file" class="form-control" name="image" placeholder="Image">
+            {% for error in form.image.errors %}
+            				<span style="color: red;">[{{ error }}]</span>
+            			{% endfor %}
+        </div>
+
+        <div class="form-holder">
+            <span class="lnr lnr-lock"></span>
+            <input type="number" class="form-control" name="price" placeholder="Price">
+            {% for error in form.price.errors %}
+            				<span style="color: red;">[{{ error }}]</span>
+            			{% endfor %}
+        </div>
+
+                <p><select name="select" placeholder="Name Select">
+                    <option selected="selected">Выберите decor</option>
+                    <option>Изделие из бетона</option>
+                    <option>Изделие из дерева</option>
+                    <option>Изделие из ткани</option>
+                    </select></p>
+
+        <div class="form-holder">
+            <span class="lnr lnr-lock"></span>
+            <input type="number" class="form-control" name="quantity_in_stock" placeholder="Quantity">
+            {% for error in form.quantity_in_stock.errors %}
+            				<span style="color: red;">[{{ error }}]</span>
+            			{% endfor %}
+        </div>
+        <button>
+            <span>Send Form</span>
+        </button>
+
+
+            <br>
+        </form></div>
+
+    </div>
+
+
+    </body>
+        </form>
+
+            <form method="get">
+                <input type="submit" name="open" value="open">
+            </form>
+{% endblock content %}

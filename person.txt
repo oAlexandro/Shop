@@ -1,0 +1,18 @@
+[
+  {
+    "id_product": 1,
+    "id_category": 1,
+    "name_of_product": "Горшок",
+    "product_description": "Горшок для цветов",
+    "image": "горшок.jpg",
+    "price": 150
+  },
+  {
+    "id_product": 2,
+    "id_category": 1,
+    "name_of_product": "Горшок",
+    "product_description": "Горшок для кухни",
+    "image": "горшок.jpg",
+    "price": 120
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id_product": 1,
+    "id_category": 1,
+    "name_of_product": "Горшок",
+    "product_description": "Горшок для цветов",
+    "image": "горшок.jpg",
+    "price": 150
+  },
+  {
+    "id_product": 2,
+    "id_category": 1,
+    "name_of_product": "Горшок",
+    "product_description": "Горшок для кухни",
+    "image": "горшок.jpg",
+    "price": 120
+  }
+]
+
+
+[
+  {
+    'id_product': 1, 
+    'id_category': 1, 
+    'name_of_product': 'Горшок', 
+    'product_description': 'Горшок для цветов',
+    'image': 'горшок.jpg',
+    'price': 150}, 
+  {'id_product': 2,
+    'id_category': 1,
+    'name_of_product': 'Горшок',
+    'product_description': 'Горшок для кухни',
+    'image': 'горшок.jpg',
+    'price': 120}
+]
+
+{
+  "[
+    {
+    'id_product': 1,
+    'id_category': 1,
+    'name_of_product': 'Горшок',
+    'product_description': 'Горшок для цветов',
+    'image': 'горшок.jpg', 'price': 150},
+    {
+      'id_product': 2,
+      'id_category': 1,
+      'name_of_product': 'Горшок',
+      'product_description': 'Горшок для кухни',
+      'image': 'горшок.jpg',
+      'price': 120
+      }
+      ]":1}
+
+
+      console.log("test")
+      console.log(test[0].product_description);
+
+   //console.log(test[0].product_description);
+ //  var out='';
+
+ console.log(item[0].["1"])
+
+
+ with open("person.json", "w",encoding='utf-8') as file:
+ print("Help")
+ return json.dump(empList,file,indent=2,ensure_ascii=False)
+
+
+
+
+
+
+
+
+
+ [{1: {'id_product': 1, 'id_category': 1, 'name_of_product': 'Горшок', 'product_description': 'Горшок для цветов', 'image': 'горшок.jpg', 'price': 150}}, {2: {'id_product': 2, 'id_category': 1, 'name_of_product': 'Горшок', 'product_description': 'Горшок для кухни', 'image': 'горшок.jpg', 'price': 120}}]
+
+
+
+
+
+
+
+
+ [{1: {'id_product': 1, 'id_category': 1, 'name_of_product': 'Горшок', 'product_description': 'Горшок для цветов', 'image': 'горшок.jpg', 'price': 150}}, {2: {'id_product': 2, 'id_category': 1, 'name_of_product': 'Горшок', 'product_description': 'Горшок для кухни', 'image': 'горшок.jpg', 'price': 120}}]

@@ -1,0 +1,45 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    <script src="{{ url_for('static', filename='home/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='home/js/main.js') }}"></script>
+
+    {% for empList in empList %}
+        <div class="col-4 main-page_col">
+            <article class="media content-section main-page_col-item" id="item">
+                <div class="media-body content_wrapper">
+                    <div class="article-metadata content">
+                        <img class="article-content content_icon" src= "{{ url_for('static', filename='image_product/') }}{{ empList.image }}" alt="photo">
+                        <a class="mr-2 content_name" href="#">{{  empList.name_of_product }}</a>
+                        <small class="text-muted content_desc">{{ empList.product_description }}</small>
+                        <small class="text-muted content_price">{{ empList.price }}</small>
+                        <button class="products-btn main-btn" name="btn" id="{{ empList.id_product }}", onclick="box1(id)">Buy</button>
+                    </div>
+                </div>
+
+
+
+            </article>
+        </div>
+
+
+
+
+    {% endfor %}
+
+
+     {% if current_user.is_authenticated %}
+
+          <button class="order" name="btn" id="{{ empDict2 }}", onclick="item2(id)">Оформить заказ</button>
+    {% else %}
+    <a class="nav-item nav-link login-link" href="{{ url_for('login') }}">Авторизуйтесь чтоб оформить заказ</a>
+    {% endif %}
+
+
+     <div class="mini-cart"></div>
+     <h2><a class="article-title" id="product1" href="#">{{ empList.id_product }}</a></h2>
+{% endblock content %}
+
+</body>
+
+</html>

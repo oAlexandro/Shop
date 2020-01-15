@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{% for order_take in order_take %}
+        <div class="col-4 orders">
+            <article id="item">
+                <div >
+                    <div >
+                       <small><img src= "{{ url_for('static', filename='image_product/') }}{{ order_take.image }}" alt="photo" width="50" height="50"></small>
+                        <a href="#">{{  order_take.name_of_product }}</a>
+                        <small >{{ order_take.date_order }}</small>
+                        <small >{{ order_take.price }} Заказ оформлен</small>
+                    </div>
+                </div>
+
+
+
+            </article>
+        </div>
+
+    {% endfor %}
+
+
+{% endblock content %}
