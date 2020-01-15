@@ -72,6 +72,7 @@ def base():
          'price': []
      }
      Takebd(empList,empDict2)
+     #print(empDict2)
 
      return render_template('/home2.html',empList=empList,empDict2=empDict2)
 
