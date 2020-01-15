@@ -112,7 +112,7 @@ def cart():
                 cursor.execute(
                     "INSERT INTO ord (id_customer, id_order, id_product, name_of_product, product_description, image, price, date_order) "
                    "VALUES ((SELECT(id_customer) From customer WHERE %(id_user)s=id_customer),"
-                   " (SELECT MAX(1), (SELECT (id_product) From product WHERE (%(id_new_order)s)+1=id_product), (SELECT(name_of_product) From product WHERE (%(id_new_order)s)+1=id_product),(SELECT(product_description) From product WHERE (%(id_new_order)s)+1=id_product),(SELECT(image) From product WHERE (%(id_new_order)s)+1=id_product),"
+                   " (SELECT MAX(id_order)+1 From ord), (SELECT (id_product) From product WHERE (%(id_new_order)s)+1=id_product), (SELECT(name_of_product) From product WHERE (%(id_new_order)s)+1=id_product),(SELECT(product_description) From product WHERE (%(id_new_order)s)+1=id_product),(SELECT(image) From product WHERE (%(id_new_order)s)+1=id_product),"
                     "(Select price*%(count)s From product Where price=(Select price FROM product where (%(id_new_order)s)+1=id_product)), %(date_now)s)",
                    {'id_new_order': empList[index]['id'],
                     'count': empList[index]['count'],
