@@ -130,98 +130,6 @@ def cart():
             return jsonify({'output': 'Full Name: ' })
     return render_template('cart.html', title='Cart')
 
-            #(SELECT(id_category) From category WHERE % (select)
-            #s = name_category)
-
-            #'id_product': emp[0],
-      #if firstName and lastName:
-      #    return jsonify({'output': 'Full Name: ' + output})
-
-
-
-        #r1=requests.get('http://127.0.0.1:5000/cart'.format("Test_cart")).json()
-        #print(r1)
-      #  r = requests.get('http://127.0.0.1:5000/cart'.format(
-      #   #   'cart'),
-      #      )
-      #  if r.status_code != 200:
-      #      return ('Error: the translation service failed.')
-      #  test= json.loads(r.content.decode('utf-8-sig'))
-      #  print(test)
-        #
-      #  res_test= jsonify({'cart':request.form[cart]})
-      #  print(type(res_test))
-      #  print(cart_dict)
-        #json_test = json.loads(res_test)
-       # response_data = res_test.json()
-      #  with open("person.json", "w", encoding='utf-8') as file:
-      #      print("Help")
-      #      json.dump(res_test, file, indent=2, ensure_ascii=False)
-      #  #pri#nt(res_test)
-        #res = requests.get("http://127.0.0.1:5000/cart")
-       # print(type(res),"THIS TYPE")
-        #json_test= json.loads(res.content.decode('utf-8-sig'))
-        #print(json_test)
-       # print( res.json("data"),"JSON")
-        #req=requests.get("http://127.0.0.1:5000/cart").json()
-        #storage = cgi.FieldStorage("http://127.0.0.1:5000/cart")
-        #data = storage.getvalue('data')
-        #print(type(data), "TYPE DATA")
-        ##parsed_string = json.loads(data)
-        #print('Status: 200 OK')
-        #print('Content-Type: text/plain')
-        #print(data)
-        ##print(parsed_string)
-#
-        #if data is not None:
-        #    print(data,"TTEET")
-
-        #data_dic=json.loads("cart")
-        #print(req)
-
-
-       # jsdata = request.form['cart']
-        #print(jsdata)
-
-
-
-    #if request.method == 'POST':
-    #    r=request.get('https://reqres.in/api/users',json=cart_dict)
-    #    print(r)
-    #   # content = request.get_json("127.0.0.1:5000/cart")
-    #  # request1=request.get("http://127.0.0.1:5000/cart")
-      # request_text = request1.text
-      # data=json.loads(request_text)
-      # print(data)
-
-
-
-
-
-
-
-    #    print("text")
-#   # myjson = json.loads(sys.stdin.read(int(os.environ['CONTENT_LENGTH'])))
-
-#    #
-#    content1 = request.get_json("127.0.0.1:5000")
-#    print(content,"1")
-#    print(content1, "2")#
-#    r = requests.post("127.0.0.1:5000/cart")
-#    print(r,"R")
-#    ##request_post= request.get_json("127.0.0.1:5000/cart")
-#    #print(content,"REQUEST")
-#    ##request_text=request_post.text
-#    #data=json.loads(request_text)
-        #print(data)
-        #response = requests.get("http://127.0.0.1:5000",data={'key':cart})
-        #todos = json.loads(response.text)
-        #print(todos == response.json())  # True
-        #print(type(todos))  # <class 'list'>
-        #print("GET_METOD")
-       # return render_template('cart/order.html', title='Cart')
-
-
 
 @app.route("/order", methods=['GET','POST'])
 def order():
@@ -248,15 +156,10 @@ def order():
         }
         order_take.append(dict)
     print(order_take)
-   # print(order_take[0][1][1])
 
     return render_template('order.html', title='Order',order_take=order_take)
 
 
-#@app.route('/postmethod', methods=['POST'])
-#def get_post_javascript_data():
-#    jsdata = request.form['javascript_data']
-#    return jsdata
 
 
 
@@ -344,7 +247,7 @@ def register():
             if form_register.Username != login:
                 print("Создавай")
             cursor.execute("INSERT INTO customer (id_customer,login, password, email) "
-                           "VALUES ((SELECT MAX(id_customer)+1 From customer), %(username)s,  %(password)s, %(email)s)",
+                           "VALUES ((1), %(username)s,  %(password)s, %(email)s)",
                            {'username' : form_register.Username.data,
                             'password': str(form_register.password.data),
                             'email' : form_register.Email.data})

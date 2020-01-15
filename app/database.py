@@ -13,11 +13,11 @@ try:
 
     conn.commit()
 
-    cursor.execute(
-
-        "CREATE TABLE if not exists master (id_master int primary key, login varchar(15) NOT null unique, password varchar(100) NOT NULL, description TEXT NOT NULL unique, picture TEXT NOT NULL, history TEXT NOT NULL);")
-
-    conn.commit()
+ #   cursor.execute(
+#
+ #       "CREATE TABLE if not exists master (id_master int primary key, login varchar(15) NOT null unique, password varchar(100) NOT NULL, description TEXT NOT NULL unique, picture TEXT NOT NULL, history TEXT NOT NULL);")
+#
+ #   conn.commit()
 
     # references person(table)
     cursor.execute(
@@ -47,12 +47,12 @@ try:
 
 
 
-    cursor.execute(
+  # cursor.execute(
 
-        "CREATE TABLE if not exists exclusive_product(id_exclusive_product int primary key, id_master int  REFERENCES master, image_exclusive TEXT NOT NULL, id_category int unique REFERENCES category  );")
+  #     "CREATE TABLE if not exists exclusive_product(id_exclusive_product int primary key, id_master int  REFERENCES master, image_exclusive TEXT NOT NULL, id_category int unique REFERENCES category  );")
 
-    conn.commit()
-
+  # conn.commit(#)
+#
 #   cursor.execute(
 #
 #       "CREATE TABLE if not exists goods_in_order(FOREIGN KEY id_order REFERENCES ord"
