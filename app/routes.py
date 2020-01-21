@@ -4,6 +4,7 @@ import requests
 import sys
 from flask import abort
 import cgi
+import time
 from datetime import datetime
 
 from flask_login import login_user, login_required, current_user, logout_user
@@ -55,6 +56,15 @@ def load_user(user_id):
 	return User(user_id)
 
 
+empDict2 = {
+    'id_product': [],
+    'id_category': [],
+    'name_of_product': [],
+    'product_description': [],
+    'image': [],
+    'price': []
+}
+
 @app.route("/")
 @app.route('/home2', methods=['GET','POST'])
 def base():
@@ -62,18 +72,8 @@ def base():
      id=id.id_product
      print(id)
      empList = []
-     #test = {}
-     empDict2 = {
-         'id_product': [],
-         'id_category': [],
-         'name_of_product': [],
-         'product_description': [],
-         'image': [],
-         'price': []
-     }
      Takebd(empList,empDict2)
      print(empDict2)
-     #index_test=0
      print(empDict2['id_product'][0])
 
 
@@ -111,24 +111,10 @@ def cart():
         index=0
         time=bool;
         if (current_user.is_authenticated):
-            test = []
-            # test = {}
-            test1 = {
-                'id_product': [],
-                'id_category': [],
-                'name_of_product': [],
-                'product_description': [],
-                'image': [],
-                'price': []
-            }
-            Takebd(test, test1)
-            print (test1,"TEST")
-
-
-
             for cou in empList:
-                index_test=(empList[index]['id'])
-                print(test1['id_product'][index_test],"THIS IS A TEST PRINT")
+                index_test=int(empList[index]['id'])
+                print(index_test,"Oooh my this is an apple")
+                print(empDict2['name_of_product'][index_test],"THIS IS A TEST PRINT")
                 print("-------------------------------------------------------------------------------------------")
                 print(empList[index]['id'])
                 print(empList[index]['count'])
@@ -138,11 +124,11 @@ def cart():
                    " (SELECT MAX(id_order)+1 From ord), (%(id_product)s),  (%(name_order_product)s), (%(product_description)s), (%(image)s),"
                     " (%(price)s *%(count)s), %(date_now)s)",
                    {'id_new_order': empList[index]['id'],
-                    'id_product': test1['id_product'][1 + empList[index]['id']],
-                    'name_order_product': test1['name_of_product'][1+empList[index]['id']],
-                    'product_description': test1['product_description'][1+empList[index]['id']],
-                    'image': test1['image'][1+empList[index]['id']],
-                    'price': test1['price'][1+empList[index]['id']],
+                    'id_product': empDict2['id_product'][index_test],
+                    'name_order_product': empDict2['name_of_product'][index_test],
+                    'product_description': empDict2['product_description'][index_test],
+                    'image': empDict2['image'][index_test],
+                    'price': empDict2['price'][index_test],
                     'count': empList[index]['count'],
                     'id_user': current_user.id,
                     'date_now':now.strftime("%Y-%m-%d")},
@@ -161,29 +147,31 @@ def cart():
 
 @app.route("/order", methods=['GET','POST'])
 def order():
-    cursor.execute('Select id_customer, id_order, name_of_product, product_description, image, price, date_order from ord where id_customer=%(id)s',
-                   {'id': current_user.id,
-                   'name_of_product': 'name',
-                    'select': {'select'},
-                    'product_description': {'product'},
-                    'image': {'image'},
-                    'price': {'price'},
-                    'quantity_in_stock': {'quantity'}
-                    })
-    order_t =cursor.fetchall()
-    order_take=[]
-    for emp in order_t:
-        dict = {
-            'id_customer': emp[0],
-            'id_order': emp[1],
-            'name_of_product': emp[2],
-            'product_description': emp[3],
-            'image': emp[4],
-            'price': emp[5],
-            'date_order':emp[6]
-        }
-        order_take.append(dict)
-    print(order_take)
+    if (current_user.is_authenticated):
+        time.sleep(5)
+        cursor.execute('Select id_customer, id_order, name_of_product, product_description, image, price, date_order from ord where id_customer=%(id)s',
+                       {'id': current_user.id,
+                       'name_of_product': 'name',
+                        'select': {'select'},
+                        'product_description': {'product'},
+                        'image': {'image'},
+                        'price': {'price'},
+                        'quantity_  in_stock': {'quantity'}
+                        })
+        order_t =cursor.fetchall()
+        order_take=[]
+        for emp in order_t:
+            dict = {
+                'id_customer': emp[0],
+                'id_order': emp[1],
+                'name_of_product': emp[2],
+                'product_description': emp[3],
+                'image': emp[4],
+                'price': emp[5],
+                'date_order':emp[6]
+            }
+            order_take.append(dict)
+        print(order_take)
 
     return render_template('order.html', title='Order',order_take=order_take)
 
