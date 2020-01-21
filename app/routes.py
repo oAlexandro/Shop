@@ -73,7 +73,9 @@ def base():
      }
      Takebd(empList,empDict2)
      print(empDict2)
-     
+     #index_test=0
+     #print(empDict2['id_product'][1+index_test])
+
 
      return render_template('/home2.html',empList=empList,empDict2=empDict2)
 
@@ -120,7 +122,7 @@ def cart():
                 'price': []
             }
             Takebd(test, test1)
-            print (test1)
+            print (test1,"TEST")
 
 
 
@@ -132,9 +134,14 @@ def cart():
                 cursor.execute(
                     "INSERT INTO ord (id_customer, id_order, id_product, name_of_product, product_description, image, price, date_order) "
                    "VALUES ((SELECT(id_customer) From customer WHERE %(id_user)s=id_customer),"
-                   " (SELECT MAX(id_order)+1 From ord), (SELECT (id_product) From product WHERE (%(id_new_order)s)+1=id_product), (SELECT(name_of_product) From product WHERE (%(id_new_order)s)+1=id_product),(SELECT(product_description) From product WHERE (%(id_new_order)s)+1=id_product),(SELECT(image) From product WHERE (%(id_new_order)s)+1=id_product),"
-                    "(Select price*%(count)s From product Where price=(Select price FROM product where (%(id_new_order)s)+1=id_product)), %(date_now)s)",
+                   " (SELECT MAX(id_order)+1 From ord), (%(id_product)s),  (%(name_order_product)s), (%(product_description)s), (%(image)s),"
+                    " (%(price)s *%(count)s), %(date_now)s)",
                    {'id_new_order': empList[index]['id'],
+                    'id_product': test1['id_product'][1 + empList[index]['id']],
+                    'name_order_product': test1['name_of_product'][1+empList[index]['id']],
+                    'product_description': test1['product_description'][1+empList[index]['id']],
+                    'image': test1['image'][1+empList[index]['id']],
+                    'price': test1['price'][1+empList[index]['id']],
                     'count': empList[index]['count'],
                     'id_user': current_user.id,
                     'date_now':now.strftime("%Y-%m-%d")},
