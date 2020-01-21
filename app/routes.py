@@ -74,7 +74,7 @@ def base():
      Takebd(empList,empDict2)
      print(empDict2)
      #index_test=0
-     #print(empDict2['id_product'][1+index_test])
+     print(empDict2['id_product'][0])
 
 
      return render_template('/home2.html',empList=empList,empDict2=empDict2)
@@ -128,7 +128,7 @@ def cart():
 
             for cou in empList:
                 index_test=(empList[index]['id'])
-                print(test1['id_product'][1])
+                print(test1['id_product'][index_test])
                 print("-------------------------------------------------------------------------------------------")
                 print(empList[index]['id'])
                 print(empList[index]['count'])
