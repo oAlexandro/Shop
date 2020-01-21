@@ -127,7 +127,8 @@ def cart():
 
 
             for cou in empList:
-                print(test1['id_product'][empList[index]['id']])
+                index_test=(empList[index]['id'])
+                print(test1['id_product'][index_test])
                 print("-------------------------------------------------------------------------------------------")
                 print(empList[index]['id'])
                 print(empList[index]['count'])
