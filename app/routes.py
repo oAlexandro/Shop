@@ -127,7 +127,6 @@ def cart():
                 print(empList[index]['id'])
                 index=index+1
                 print("Commit accept")
-            time=True;
             print('COMIT ACEPT')
             return jsonify({'output': 'Full Name: ' })
 
