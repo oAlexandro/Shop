@@ -108,6 +108,20 @@ def cart():
         index=0
         time=bool;
         if (current_user.is_authenticated):
+            test = []
+            # test = {}
+            test1 = {
+                'id_product': [],
+                'id_category': [],
+                'name_of_product': [],
+                'product_description': [],
+                'image': [],
+                'price': []
+            }
+            Takebd(test, test1)
+            print (test1)
+
+
             for cou in empList:
                 print(empList[index]['id'])
                 print(empList[index]['count'])
