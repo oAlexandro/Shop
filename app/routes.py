@@ -106,6 +106,7 @@ def cart():
         print(current_user.id,"ID")
         now = datetime.now()
         index=0
+        time=False;
         if (current_user.is_authenticated):
             for cou in empList:
                 print(empList[index]['id'])
@@ -126,10 +127,12 @@ def cart():
                 print(empList[index]['id'])
                 index=index+1
                 print("Commit accept")
-
+            time=True;
             print('COMIT ACEPT')
             return jsonify({'output': 'Full Name: ' })
-    return render_template('cart.html', title='Cart')
+        if(time==True):
+            return render_template('cart.html', title='Cart')
+
 
 
 @app.route("/order", methods=['GET','POST'])
