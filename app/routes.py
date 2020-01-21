@@ -73,6 +73,7 @@ def base():
      }
      Takebd(empList,empDict2)
      print(empDict2)
+     
 
      return render_template('/home2.html',empList=empList,empDict2=empDict2)
 
@@ -122,7 +123,10 @@ def cart():
             print (test1)
 
 
+
             for cou in empList:
+                print(test1['id_product'][empList[index]['id']])
+                print("-------------------------------------------------------------------------------------------")
                 print(empList[index]['id'])
                 print(empList[index]['count'])
                 cursor.execute(
