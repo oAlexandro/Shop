@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bcafaa7-541a-4a1c-a317-35f934ceee5c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/home/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/home/js/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/image_product/Свечи  ИЗ БЕТОНА2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/image_product/Свечи ИЗ БЕТОНА.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/image_product/Свечи ИЗ БЕТОНА3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/image_product/Свечи ИЗ БЕТОНА4.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/static/home/js/cart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+            <state relative-caret-position="187">
+              <caret line="11" column="47" lean-forward="true" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -367,12 +361,12 @@
       <workItem from="1579078669539" duration="1018000" />
       <workItem from="1579079707770" duration="145000" />
       <workItem from="1579080126772" duration="7930000" />
-      <workItem from="1579580312689" duration="1605000" />
+      <workItem from="1579580312689" duration="1972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364967000" />
+    <option name="totallyTimeSpent" value="365334000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -709,8 +703,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/home/js/cart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        <state relative-caret-position="187">
+          <caret line="11" column="47" lean-forward="true" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
         </state>
       </provider>
     </entry>
