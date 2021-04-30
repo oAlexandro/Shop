@@ -22,7 +22,7 @@ repoze.lru==0.7
 requests==2.22.0
 Routes==2.4.1
 six==1.13.0
-urllib3==1.25.7
+urllib3==1.25.8
 virtualenv==16.7.7
 Werkzeug==0.16.0
 WTForms==2.2.1
